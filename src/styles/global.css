@@ -331,74 +331,6 @@ code, pre { font-family: "JetBrains Mono", "Fira Code", monospace; }
 }
 
 /* =============================================================================
-   4m. How It Works Section
-   ============================================================================= */
-.how-it-works { padding: 100px 0; }
-.how-it-works-inner {
-  max-width: 1080px; margin: 0 auto; padding: 0 24px; text-align: center;
-}
-.how-it-works h2 { font-size: 36px; font-weight: 700; margin-bottom: 48px; }
-.flow-diagram {
-  display: flex; align-items: stretch; justify-content: center;
-  gap: 0; margin-bottom: 48px;
-}
-.flow-step {
-  flex: 1; max-width: 180px; text-align: center; padding: 24px 16px;
-  background: var(--cosmos); border: 1px solid var(--nebula-edge);
-  border-radius: 12px;
-}
-.flow-step svg { width: 32px; height: 32px; margin-bottom: 12px; color: var(--cyan-pulse); }
-.flow-step .step-name {
-  font-size: 15px; font-weight: 600; color: var(--starlight); margin-bottom: 6px;
-}
-.flow-step .step-desc {
-  font-size: 12px; color: var(--text-muted); line-height: 1.4;
-}
-.flow-arrow {
-  display: flex; align-items: center; padding: 0 8px;
-  color: var(--nebula-edge); font-size: 24px;
-}
-.tech-pills {
-  display: flex; flex-wrap: wrap; justify-content: center; gap: 12px;
-}
-.tech-pill {
-  border: 1px solid var(--nebula-edge); border-radius: 20px;
-  padding: 6px 16px; font-size: 12px; color: var(--text-muted);
-  background: transparent; transition: all 150ms ease;
-}
-.tech-pill:hover { border-color: var(--cyan-pulse); color: var(--starlight); }
-
-/* =============================================================================
-   4n. Quick Start Section
-   ============================================================================= */
-.quick-start { padding: 100px 0; }
-.quick-start-inner { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
-.quick-start h2 { font-size: 36px; font-weight: 700; text-align: center; margin-bottom: 48px; }
-.steps { max-width: 640px; margin: 0 auto; }
-.step {
-  display: flex; gap: 24px; margin-bottom: 40px; align-items: flex-start;
-}
-.step-number {
-  font-size: 48px; font-weight: 700; color: var(--cyan-pulse);
-  line-height: 1; flex-shrink: 0; width: 48px;
-}
-.step-content { flex: 1; }
-.step-content h3 {
-  font-size: 18px; font-weight: 600; color: var(--starlight); margin-bottom: 12px;
-}
-.step-content .caption {
-  font-size: 13px; color: var(--text-muted); margin-top: 8px;
-}
-.step-content .caption a { color: var(--cyan-pulse); }
-.alt-paths {
-  max-width: 640px; margin: 32px auto 0;
-  border-top: 1px solid var(--nebula-edge); padding-top: 32px;
-}
-.alt-paths h4 {
-  font-size: 14px; color: var(--text-muted); font-weight: 500; margin-bottom: 16px;
-}
-
-/* =============================================================================
    4o. API Reference Section
    ============================================================================= */
 .api-reference { padding: 100px 0; }
@@ -494,6 +426,15 @@ code, pre { font-family: "JetBrains Mono", "Fira Code", monospace; }
   border-top: 1px solid var(--nebula-edge);
   text-align: center; font-size: 13px; color: var(--text-muted);
 }
+.tech-pills {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 12px;
+}
+.tech-pill {
+  border: 1px solid var(--nebula-edge); border-radius: 20px;
+  padding: 6px 16px; font-size: 12px; color: var(--text-muted);
+  background: transparent; transition: all 150ms ease;
+}
+.tech-pill:hover { border-color: var(--cyan-pulse); color: var(--starlight); }
 
 /* =============================================================================
    4r. Code Block Component Styles
@@ -607,17 +548,11 @@ code, pre { font-family: "JetBrains Mono", "Fira Code", monospace; }
 
   .features-grid { grid-template-columns: 1fr; }
 
-  .flow-diagram { flex-direction: column; align-items: center; }
-  .flow-arrow { transform: rotate(90deg); padding: 4px 0; }
-
   .stat-cards { flex-direction: column; gap: 24px; }
 
   .footer-inner { grid-template-columns: 1fr; gap: 32px; }
 
   .social-proof-inner { gap: 20px; }
-
-  .step { flex-direction: column; gap: 12px; }
-  .step-number { width: auto; }
 }
 
 /* Remove hover on touch */
