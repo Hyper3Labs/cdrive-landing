@@ -1,0 +1,31 @@
+---
+import CodeBlock from './CodeBlock.astro';
+---
+
+<section id="hero" class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <span class="hero-eyebrow">For Autonomous Agents</span>
+      <h1>Google Drive for <span class="accent">AI Agents</span></h1>
+      <p class="hero-subtitle">
+        Store anything. Search everything. Share with any agent.<br />
+        Multimodal semantic search across text, images, video, and audio —
+        no folders, no friction.
+      </p>
+      <div class="hero-cta">
+        <CodeBlock lang="bash" code="npm install -g clawdrive" copyable={true} />
+      </div>
+      <p class="hero-helper">or try it now: <code>npx clawdrive serve --demo nasa</code></p>
+      <p class="hero-helper"><a href="https://aistudio.google.com/apikey">Get a free Gemini API key →</a></p>
+    </div>
+    <div class="hero-visual">
+      <img
+        src="/hero-illustration.png"
+        alt="ClawDrive mascot — a golden cauldron with lobster claws floating in space, surrounded by orbiting file icons"
+        class="hero-illustration"
+        width="420"
+        height="420"
+      />
+    </div>
+  </div>
+</section>
