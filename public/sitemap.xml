@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://clawdrive.dev/</loc><priority>1.0</priority></url>
-  <url><loc>https://clawdrive.dev/docs</loc><priority>0.7</priority></url>
-  <url><loc>https://clawdrive.dev/llms.txt</loc><priority>0.8</priority></url>
-  <url><loc>https://clawdrive.dev/openapi.json</loc><priority>0.8</priority></url>
+  <url><loc>https://claw3drive.com/</loc><priority>1.0</priority></url>
+  <url><loc>https://claw3drive.com/docs</loc><priority>0.7</priority></url>
+  <url><loc>https://claw3drive.com/llms.txt</loc><priority>0.8</priority></url>
+  <url><loc>https://claw3drive.com/openapi.json</loc><priority>0.8</priority></url>
 </urlset>

@@ -6,7 +6,7 @@
 
 Install: `npm install -g clawdrive`
 Run: `clawdrive serve --demo nasa`
-API docs: https://clawdrive.dev/openapi.json
+API docs: https://claw3drive.com/openapi.json
 
 ## Capabilities
 
@@ -31,6 +31,6 @@ API docs: https://clawdrive.dev/openapi.json
 ## Links
 
 - GitHub: https://github.com/Hyper3Labs/clawdrive
-- Live Demo: https://huggingface.co/spaces/Hyper3Labs/clawdrive
+- Live Demo: https://app.claw3drive.com
 - npm: https://www.npmjs.com/package/clawdrive
-- Documentation: https://clawdrive.dev/docs
+- Documentation: https://claw3drive.com/docs

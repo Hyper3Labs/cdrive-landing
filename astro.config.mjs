@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://clawdrive.dev',
+  site: 'https://claw3drive.com',
   output: 'static',
   build: {
     assets: '_assets',
