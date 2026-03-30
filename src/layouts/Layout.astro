@@ -1,0 +1,92 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "ClawDrive — Google Drive for AI Agents",
+  description = "ClawDrive — Google Drive for AI agents. Local-first file storage with multimodal semantic search across text, images, video, and audio. Open source CLI and REST API."
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+
+  <!-- SEO -->
+  <meta name="description" content={description} />
+  <meta name="keywords" content="AI agent file storage, multimodal semantic search, agent-native sharing, vector database, file management for AI, Google Drive alternative for agents, LanceDB, Gemini embeddings" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+  <link rel="canonical" href="https://clawdrive.dev/" />
+
+  <!-- AI-specific hints -->
+  <meta name="ai:type" content="developer-tool" />
+  <meta name="ai:category" content="file-storage, semantic-search, agent-infrastructure" />
+  <meta name="ai:install" content="npm install -g clawdrive" />
+  <meta name="ai:api-spec" content="https://clawdrive.dev/openapi.json" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="ClawDrive — Google Drive for AI Agents" />
+  <meta property="og:description" content="Multimodal semantic search. 3D file visualization. Agent-native sharing. Open source." />
+  <meta property="og:image" content="https://clawdrive.dev/social-preview.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://clawdrive.dev" />
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ClawDrive — Google Drive for AI Agents" />
+  <meta name="twitter:description" content="Multimodal semantic search. 3D file visualization. Agent-native sharing. Open source." />
+  <meta name="twitter:image" content="https://clawdrive.dev/social-preview.png" />
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "ClawDrive",
+    "description": "Google Drive for AI agents. Local-first file storage with multimodal semantic search, 3D visualization, and agent-native sharing.",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "macOS, Linux, Windows",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "license": "https://opensource.org/licenses/MIT",
+    "url": "https://clawdrive.dev",
+    "downloadUrl": "https://www.npmjs.com/package/clawdrive",
+    "softwareVersion": "1.0.0",
+    "author": { "@type": "Organization", "name": "Hyper3Labs", "url": "https://hyper3labs.com" },
+    "potentialAction": [
+      {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "http://localhost:7860/api/search?q={query}",
+          "httpMethod": "GET",
+          "contentType": "application/json"
+        },
+        "query-input": "required name=query"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
+  <slot />
+  <script src="../scripts/main.js"></script>
+</body>
+</html>
