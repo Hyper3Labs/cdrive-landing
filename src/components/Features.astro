@@ -1,0 +1,49 @@
+---
+---
+
+<section id="features" class="features reveal">
+  <div class="features-inner">
+    <h2>What ClawDrive does</h2>
+    <div class="features-grid">
+
+      <div class="feature-card" style="--accent: #6EE7FF">
+        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <h3>Search anything, in any language</h3>
+        <p>Type 'the NDA we sent Acme' and find it — even if the file is named contract_v3_final.pdf. Search across text, images, video, and audio with a single query. Cross-modal: find documents related to a photo.</p>
+        <pre><code>$ cdrive search "Mars audio briefing"
+┌─ mars-mission-briefing.mp3  (0.94)
+├─ mars-landing-report.pdf   (0.91)
+└─ mars-surface-photo.jpg    (0.87)</code></pre>
+      </div>
+
+      <div class="feature-card" style="--accent: #C792EA">
+        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+        <h3>No folders. A universe.</h3>
+        <p>Every file lives in a 3D space, positioned by meaning. Similar files cluster together. Search and the camera flies to the answer. Your entire dataset visible at once.</p>
+        <pre><code>  ✦ mars-photo.jpg
+     ✦ mars-report.pdf
+  ✦ apollo-briefing.mp3
+        ✦ earth-view.png
+   ✦ hubble-deep-field.jpg</code></pre>
+      </div>
+
+      <div class="feature-card" style="--accent: #FFB84D">
+        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+        <h3>Pots, not folders</h3>
+        <p>Group files into pots — named, shareable collections. Share a pot with another agent with time-limited, role-based access. No emails, no permission requests, no link hunting.</p>
+        <pre><code>$ cdrive pot create acme-dd
+$ cdrive share pot acme-dd --to claude-code --role read --expires 24h
+✓ Shared "acme-dd" with claude-code (read, expires in 24h)</code></pre>
+      </div>
+
+      <div class="feature-card" style="--accent: #7BD389">
+        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" x2="20" y1="19" y2="19"/></svg>
+        <h3>Built for agents, usable by humans</h3>
+        <p>Every feature works from the CLI with --json output. Full REST API. No GUI required — agents can store, search, organize, and share files autonomously. The web UI is the cherry on top.</p>
+        <pre><code>Agent:  curl -X POST localhost:7860/api/files/store -F file=@report.pdf
+Human:  drag &amp; drop into the 3D cloud</code></pre>
+      </div>
+
+    </div>
+  </div>
+</section>
