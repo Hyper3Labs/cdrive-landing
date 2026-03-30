@@ -31,5 +31,6 @@ API docs: https://clawdrive.dev/openapi.json
 ## Links
 
 - GitHub: https://github.com/Hyper3Labs/clawdrive
+- Live Demo: https://huggingface.co/spaces/Hyper3Labs/clawdrive
 - npm: https://www.npmjs.com/package/clawdrive
 - Documentation: https://clawdrive.dev/docs

@@ -23,7 +23,7 @@ const observer = new IntersectionObserver((entries) => {
       observer.unobserve(entry.target);
     }
   });
-}, { threshold: 0.15, rootMargin: '0px 0px -80px 0px' });
+}, { threshold: 0.2, rootMargin: '0px 0px -20% 0px' });
 
 document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 
