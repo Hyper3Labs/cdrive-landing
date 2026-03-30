@@ -508,10 +508,6 @@ code, pre { font-family: "JetBrains Mono", "Fira Code", monospace; }
 .code-block-dot {
   width: 8px; height: 8px; border-radius: 50%; background: var(--nebula-edge);
 }
-.code-block-lang {
-  font-size: 11px; font-weight: 600; text-transform: uppercase;
-  letter-spacing: 0.06em; color: var(--text-muted);
-}
 .code-block pre {
   padding: 16px 20px; margin: 0; overflow-x: auto;
   font-size: 14px; line-height: 1.6; color: var(--starlight);
@@ -533,6 +529,31 @@ code, pre { font-family: "JetBrains Mono", "Fira Code", monospace; }
 .code-block .token-keyword { color: var(--cyan-pulse); }
 .code-block .token-string { color: var(--aurora-green); }
 .code-block .token-prompt { color: var(--text-muted); user-select: none; }
+
+/* Inline code block (single-line commands) */
+.code-inline {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--code-bg); border: 1px solid var(--nebula-edge);
+  border-radius: 8px; padding: 10px 16px; padding-right: 44px;
+  position: relative;
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  font-size: 14px; color: var(--starlight);
+}
+.code-inline-prompt {
+  color: var(--cyan-pulse); user-select: none; flex-shrink: 0;
+}
+.code-inline code {
+  white-space: nowrap; overflow-x: auto;
+}
+.code-inline .copy-btn {
+  position: absolute; right: 8px; top: 50%; transform: translateY(-50%);
+  background: none; border: none; cursor: pointer;
+  color: var(--text-muted); opacity: 0.5; padding: 4px;
+  transition: opacity 150ms ease;
+}
+.code-inline:hover .copy-btn { opacity: 1; }
+.code-inline .copy-btn:hover { color: var(--starlight); }
+.code-inline .copy-btn svg { width: 16px; height: 16px; }
 
 /* =============================================================================
    4s. Scroll Reveal Animations
