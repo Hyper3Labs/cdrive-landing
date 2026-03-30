@@ -272,37 +272,65 @@ code, pre { font-family: "JetBrains Mono", "Fira Code", monospace; }
 }
 
 /* =============================================================================
-   4k. Features Section
+   4k. Features Section (Bento)
    ============================================================================= */
 .features { padding: 100px 0; }
 .features-inner { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
 .features h2 {
   font-size: 36px; font-weight: 700; text-align: center; margin-bottom: 48px;
 }
-.features-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
-}
-.feature-card {
+
+/* Hero card — full width, two columns */
+.feature-hero-card {
+  display: flex; gap: 24px; align-items: center;
   background: var(--cosmos); border: 1px solid var(--nebula-edge);
   border-radius: 12px; padding: 32px;
-  transition: border-color 150ms ease;
+  margin-bottom: 24px; transition: border-color 150ms ease;
 }
-.feature-card:hover { border-color: var(--accent, var(--cyan-pulse)); }
-.feature-card svg {
+.feature-hero-card:hover { border-color: var(--accent, var(--cyan-pulse)); }
+.feature-hero-text { flex: 1; }
+.feature-hero-text svg {
   width: 36px; height: 36px; margin-bottom: 16px;
   color: var(--accent, var(--cyan-pulse));
 }
-.feature-card h3 {
+.feature-hero-text h3 {
   font-size: 20px; font-weight: 600; margin-bottom: 12px; color: var(--starlight);
 }
-.feature-card p {
-  font-size: 15px; color: var(--starlight-dim); line-height: 1.6; margin-bottom: 20px;
+.feature-hero-text p {
+  font-size: 15px; color: var(--starlight-dim); line-height: 1.6;
 }
-.feature-card pre {
+.feature-hero-code {
+  flex: 0 0 320px;
+}
+.feature-hero-code pre {
   background: var(--code-bg); border: 1px solid var(--nebula-edge);
-  border-radius: 8px; padding: 14px 16px;
-  font-size: 13px; color: var(--starlight); line-height: 1.5;
-  overflow-x: auto;
+  border-radius: 8px; padding: 16px;
+  font-size: 13px; color: var(--starlight); line-height: 1.6;
+  overflow-x: auto; margin: 0;
+}
+.feature-hero-code .token-prompt { color: var(--cyan-pulse); user-select: none; }
+.feature-hero-code .token-muted { color: var(--text-muted); }
+.feature-hero-code .token-green { color: var(--aurora-green); }
+
+/* Compact cards — 3 columns */
+.features-row {
+  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px;
+}
+.feature-compact {
+  background: var(--cosmos); border: 1px solid var(--nebula-edge);
+  border-radius: 12px; padding: 24px;
+  transition: border-color 150ms ease;
+}
+.feature-compact:hover { border-color: var(--accent, var(--cyan-pulse)); }
+.feature-compact svg {
+  width: 32px; height: 32px; margin-bottom: 12px;
+  color: var(--accent, var(--cyan-pulse));
+}
+.feature-compact h3 {
+  font-size: 16px; font-weight: 600; margin-bottom: 8px; color: var(--starlight);
+}
+.feature-compact p {
+  font-size: 14px; color: var(--starlight-dim); line-height: 1.5;
 }
 
 /* =============================================================================
@@ -527,7 +555,6 @@ code, pre { font-family: "JetBrains Mono", "Fira Code", monospace; }
 }
 
 @media (max-width: 1079px) {
-  .features-grid { grid-template-columns: 1fr 1fr; }
   .hero h1 { font-size: 44px; }
 }
 
@@ -546,7 +573,9 @@ code, pre { font-family: "JetBrains Mono", "Fira Code", monospace; }
   .section { padding: 60px 0; }
   .section-title { font-size: 28px; }
 
-  .features-grid { grid-template-columns: 1fr; }
+  .feature-hero-card { flex-direction: column; }
+  .feature-hero-code { flex: none; width: 100%; }
+  .features-row { grid-template-columns: 1fr; }
 
   .stat-cards { flex-direction: column; gap: 24px; }
 
@@ -557,6 +586,7 @@ code, pre { font-family: "JetBrains Mono", "Fira Code", monospace; }
 
 /* Remove hover on touch */
 @media (hover: none) {
-  .feature-card:hover { border-color: var(--nebula-edge); }
+  .feature-hero-card:hover { border-color: var(--nebula-edge); }
+  .feature-compact:hover { border-color: var(--nebula-edge); }
   .code-block .copy-btn { opacity: 1; }
 }
