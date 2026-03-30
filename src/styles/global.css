@@ -143,11 +143,6 @@ code, pre { font-family: "JetBrains Mono", "Fira Code", monospace; }
 .hero-helper a { font-size: 14px; }
 
 /* Hero background glow */
-.hero::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-  background: radial-gradient(ellipse at 30% 40%, rgba(110, 231, 255, 0.06) 0%, transparent 60%);
-  pointer-events: none; z-index: 0;
-}
 .hero-inner { position: relative; z-index: 1; }
 .hero-illustration {
   max-width: 420px; width: 100%;
