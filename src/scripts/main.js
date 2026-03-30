@@ -31,7 +31,8 @@ document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 const hamburger = document.querySelector('.hamburger');
 if (hamburger) {
   hamburger.addEventListener('click', () => {
-    document.body.classList.toggle('nav-open');
+    const isOpen = document.body.classList.toggle('nav-open');
+    hamburger.setAttribute('aria-expanded', String(isOpen));
   });
   // Close on link click
   document.querySelectorAll('.navbar-links a').forEach((link) => {

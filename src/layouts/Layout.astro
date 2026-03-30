@@ -36,7 +36,7 @@ const {
   <meta property="og:description" content="Multimodal semantic search. 3D file visualization. Agent-native sharing. Open source." />
   <meta property="og:image" content="https://claw3drive.com/social-preview.png" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://claw3drive.com" />
+  <meta property="og:url" content="https://claw3drive.com/" />
 
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image" />
@@ -49,10 +49,7 @@ const {
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png" />
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet" />
+  <!-- Fonts (self-hosted) -->
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -68,19 +65,7 @@ const {
     "url": "https://claw3drive.com",
     "downloadUrl": "https://www.npmjs.com/package/clawdrive",
     "softwareVersion": "1.0.0",
-    "author": { "@type": "Organization", "name": "Hyper3Labs", "url": "https://hyper3labs.com" },
-    "potentialAction": [
-      {
-        "@type": "SearchAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "http://localhost:7860/api/search?q={query}",
-          "httpMethod": "GET",
-          "contentType": "application/json"
-        },
-        "query-input": "required name=query"
-      }
-    ]
+    "author": { "@type": "Organization", "name": "Hyper3Labs", "url": "https://hyper3labs.com" }
   }
   </script>
 </head>
