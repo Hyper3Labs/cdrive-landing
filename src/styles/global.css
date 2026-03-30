@@ -145,7 +145,7 @@ code, pre { font-family: "JetBrains Mono", "Fira Code", monospace; }
 /* Hero background glow */
 .hero-inner { position: relative; z-index: 1; }
 .hero-illustration {
-  max-width: 420px; width: 100%;
+  max-width: 560px; width: 100%;
   filter: drop-shadow(0 0 40px rgba(110, 231, 255, 0.1));
 }
 
@@ -555,7 +555,7 @@ code, pre { font-family: "JetBrains Mono", "Fira Code", monospace; }
   .hero-subtitle { margin: 0 auto 32px; }
   .hero h1 { font-size: 36px; }
   .hero-visual { order: -1; margin-bottom: 24px; }
-  .hero-illustration { max-width: 280px; }
+  .hero-illustration { max-width: 340px; }
 
   .section { padding: 60px 0; }
   .section-title { font-size: 28px; }
