@@ -99,6 +99,7 @@ code, pre { font-family: "JetBrains Mono", "Fira Code", monospace; }
   padding: 4px 12px; transition: border-color 150ms ease;
 }
 .navbar-btn:hover { border-color: var(--starlight); color: var(--starlight); }
+.navbar-btn-icon { padding: 4px 8px; }
 .hamburger {
   display: none; background: none; border: none; cursor: pointer;
   color: var(--starlight); padding: 8px;
