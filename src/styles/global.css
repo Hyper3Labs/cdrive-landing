@@ -92,13 +92,13 @@ code, pre { font-family: "JetBrains Mono", "Fira Code", monospace; }
   transition: color 150ms ease;
 }
 .navbar-links a:hover { color: var(--starlight); }
-.navbar-github {
+.navbar-btn {
   display: flex; align-items: center; gap: 6px;
   font-size: 13px; color: var(--text-muted);
   border: 1px solid var(--nebula-edge); border-radius: 8px;
   padding: 4px 12px; transition: border-color 150ms ease;
 }
-.navbar-github:hover { border-color: var(--starlight); color: var(--starlight); }
+.navbar-btn:hover { border-color: var(--starlight); color: var(--starlight); }
 .hamburger {
   display: none; background: none; border: none; cursor: pointer;
   color: var(--starlight); padding: 8px;
