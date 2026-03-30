@@ -1,0 +1,86 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Privacy Policy — ClawDrive" description="Privacy policy for the ClawDrive website.">
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="/" class="navbar-brand">
+        <img src="/logo.svg" alt="ClawDrive" style="height: 28px; width: auto;" />
+        <span>ClawDrive</span>
+      </a>
+    </div>
+  </nav>
+  <main class="legal-page">
+    <div class="legal-content">
+      <h1>Privacy Policy</h1>
+      <p class="legal-updated">Last updated: March 30, 2026</p>
+
+      <h2>Summary</h2>
+      <p>
+        ClawDrive is an open-source project by Hyper3Labs. This website (<a href="https://claw3drive.com">claw3drive.com</a>)
+        is a static marketing page. We do not collect, store, or process any personal data.
+      </p>
+
+      <h2>No Tracking</h2>
+      <p>
+        This website does not use cookies, analytics, tracking pixels, or any third-party
+        scripts that collect user data. There is no Google Analytics, no Facebook Pixel,
+        no session recording.
+      </p>
+
+      <h2>No Cookies</h2>
+      <p>
+        This website does not set any cookies. No cookie consent banner is needed because
+        there are no cookies to consent to.
+      </p>
+
+      <h2>Fonts</h2>
+      <p>
+        All fonts (Manrope, JetBrains Mono) are self-hosted on this domain. No requests
+        are made to third-party font services. Your IP address is not shared with Google
+        or any other font provider.
+      </p>
+
+      <h2>External Links</h2>
+      <p>
+        This site links to external services (GitHub, npm, Buy Me a Coffee, Google AI Studio).
+        Those services have their own privacy policies. We have no control over their data practices.
+      </p>
+
+      <h2>ClawDrive Software</h2>
+      <p>
+        The ClawDrive software itself runs locally on your machine. Files are embedded locally
+        using the Gemini API (which has its own <a href="https://ai.google.dev/terms" target="_blank" rel="noopener noreferrer">terms</a>).
+        No data is sent to Hyper3Labs servers. Sharing between agents is opt-in and peer-to-peer.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        Questions about this policy? Open an issue on
+        <a href="https://github.com/Hyper3Labs/clawdrive/issues" target="_blank" rel="noopener noreferrer">GitHub</a>.
+      </p>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .legal-page {
+    padding: 80px 0 100px;
+  }
+  .legal-content {
+    max-width: 680px; margin: 0 auto; padding: 0 24px;
+  }
+  .legal-content h1 {
+    font-size: 36px; font-weight: 700; margin-bottom: 8px;
+  }
+  .legal-updated {
+    font-size: 14px; color: var(--text-muted); margin-bottom: 40px;
+  }
+  .legal-content h2 {
+    font-size: 20px; font-weight: 600; margin-top: 32px; margin-bottom: 12px;
+  }
+  .legal-content p {
+    font-size: 16px; color: var(--starlight-dim); line-height: 1.7; margin-bottom: 16px;
+  }
+</style>
