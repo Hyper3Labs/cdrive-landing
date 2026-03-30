@@ -1,0 +1,82 @@
+---
+---
+
+<section id="api-reference" class="api-reference reveal">
+  <div class="api-reference-inner">
+    <h2>API at a glance</h2>
+    <div class="table-wrapper">
+      <table class="api-table">
+        <thead>
+          <tr>
+            <th>Method</th>
+            <th>Endpoint</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="method-badge method-post">POST</span></td>
+            <td class="endpoint">/api/files/store</td>
+            <td class="desc">Upload and embed a file</td>
+          </tr>
+          <tr>
+            <td><span class="method-badge method-get">GET</span></td>
+            <td class="endpoint">/api/files</td>
+            <td class="desc">List all stored files</td>
+          </tr>
+          <tr>
+            <td><span class="method-badge method-get">GET</span></td>
+            <td class="endpoint">/api/files/:id</td>
+            <td class="desc">Get file metadata</td>
+          </tr>
+          <tr>
+            <td><span class="method-badge method-get">GET</span></td>
+            <td class="endpoint">/api/search?q=...</td>
+            <td class="desc">Semantic search across files</td>
+          </tr>
+          <tr>
+            <td><span class="method-badge method-post">POST</span></td>
+            <td class="endpoint">/api/pots</td>
+            <td class="desc">Create a new pot</td>
+          </tr>
+          <tr>
+            <td><span class="method-badge method-get">GET</span></td>
+            <td class="endpoint">/api/pots/:pot/files</td>
+            <td class="desc">List files in a pot</td>
+          </tr>
+          <tr>
+            <td><span class="method-badge method-post">POST</span></td>
+            <td class="endpoint">/api/shares/pot/:pot</td>
+            <td class="desc">Create a share link for a pot</td>
+          </tr>
+          <tr>
+            <td><span class="method-badge method-get">GET</span></td>
+            <td class="endpoint">/api/shares/inbox</td>
+            <td class="desc">List pending incoming shares</td>
+          </tr>
+          <tr>
+            <td><span class="method-badge method-post">POST</span></td>
+            <td class="endpoint">/api/shares/approve/:id</td>
+            <td class="desc">Approve a pending share</td>
+          </tr>
+          <tr>
+            <td><span class="method-badge method-get">GET</span></td>
+            <td class="endpoint">/api/projections</td>
+            <td class="desc">Fetch UMAP projections for 3D</td>
+          </tr>
+          <tr>
+            <td><span class="method-badge method-get">GET</span></td>
+            <td class="endpoint">/api/usage</td>
+            <td class="desc">API usage metrics</td>
+          </tr>
+          <tr>
+            <td><span class="method-badge method-get">GET</span></td>
+            <td class="endpoint">/api/taxonomy</td>
+            <td class="desc">File taxonomy tree</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <a href="/openapi.json" class="api-link">Full API documentation →</a>
+  </div>
+</section>
