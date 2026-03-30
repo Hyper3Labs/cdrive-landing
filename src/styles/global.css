@@ -155,47 +155,70 @@ code, pre { font-family: "JetBrains Mono", "Fira Code", monospace; }
 }
 
 /* =============================================================================
-   4g. Star Field (CSS-only)
+   4g. Star Field (CSS box-shadow technique)
    ============================================================================= */
 .stars {
   position: fixed; top: 0; left: 0; width: 100%; height: 100%;
   pointer-events: none; z-index: 0;
   overflow: hidden;
 }
-.stars::before, .stars::after {
+/* Small stars — 1px, many */
+.stars::before {
   content: ''; position: absolute; top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-image:
-    radial-gradient(1px 1px at 10% 20%, rgba(230,240,247,0.3) 50%, transparent 50%),
-    radial-gradient(1.5px 1.5px at 30% 60%, rgba(230,240,247,0.2) 50%, transparent 50%),
-    radial-gradient(1px 1px at 50% 10%, rgba(230,240,247,0.25) 50%, transparent 50%),
-    radial-gradient(1.5px 1.5px at 70% 80%, rgba(230,240,247,0.15) 50%, transparent 50%),
-    radial-gradient(1px 1px at 90% 40%, rgba(230,240,247,0.3) 50%, transparent 50%),
-    radial-gradient(1px 1px at 15% 85%, rgba(230,240,247,0.2) 50%, transparent 50%),
-    radial-gradient(1.5px 1.5px at 45% 35%, rgba(230,240,247,0.15) 50%, transparent 50%),
-    radial-gradient(1px 1px at 75% 15%, rgba(230,240,247,0.25) 50%, transparent 50%),
-    radial-gradient(1px 1px at 85% 65%, rgba(230,240,247,0.2) 50%, transparent 50%),
-    radial-gradient(1.5px 1.5px at 25% 45%, rgba(230,240,247,0.15) 50%, transparent 50%),
-    radial-gradient(1px 1px at 60% 90%, rgba(230,240,247,0.2) 50%, transparent 50%),
-    radial-gradient(1px 1px at 5% 55%, rgba(230,240,247,0.3) 50%, transparent 50%);
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
+  width: 1px; height: 1px; border-radius: 50%;
+  background: transparent;
+  box-shadow:
+    42px 18px #E6F0F7, 187px 95px #E6F0F7, 340px 150px #E6F0F7,
+    520px 42px #E6F0F7, 680px 210px #E6F0F7, 830px 55px #E6F0F7,
+    95px 310px #E6F0F7, 250px 420px #E6F0F7, 410px 380px #E6F0F7,
+    590px 490px #E6F0F7, 760px 350px #E6F0F7, 900px 430px #E6F0F7,
+    1050px 70px #E6F0F7, 1200px 180px #E6F0F7, 1350px 40px #E6F0F7,
+    1500px 290px #E6F0F7, 1650px 120px #E6F0F7, 1800px 350px #E6F0F7,
+    130px 580px #E6F0F7, 350px 650px #E6F0F7, 510px 720px #E6F0F7,
+    720px 610px #E6F0F7, 880px 760px #E6F0F7, 1100px 550px #E6F0F7,
+    1280px 680px #E6F0F7, 1420px 590px #E6F0F7, 1600px 710px #E6F0F7,
+    60px 850px #E6F0F7, 220px 920px #E6F0F7, 440px 870px #E6F0F7,
+    650px 950px #E6F0F7, 810px 890px #E6F0F7, 1000px 810px #E6F0F7,
+    1150px 940px #E6F0F7, 1320px 860px #E6F0F7, 1550px 920px #E6F0F7,
+    1750px 800px #E6F0F7, 1900px 110px #E6F0F7, 1850px 550px #E6F0F7,
+    150px 1080px #E6F0F7, 380px 1150px #E6F0F7, 600px 1100px #E6F0F7,
+    780px 1200px #E6F0F7, 960px 1050px #E6F0F7, 1180px 1170px #E6F0F7,
+    1400px 1080px #E6F0F7, 1620px 1150px #E6F0F7, 1800px 1020px #E6F0F7,
+    90px 1350px #E6F0F7, 300px 1400px #E6F0F7, 500px 1300px #E6F0F7,
+    700px 1450px #E6F0F7, 920px 1380px #E6F0F7, 1100px 1420px #E6F0F7,
+    1300px 1310px #E6F0F7, 1520px 1400px #E6F0F7, 1700px 1280px #E6F0F7,
+    1870px 1380px #E6F0F7, 45px 1550px #E6F0F7, 250px 1620px #E6F0F7,
+    470px 1580px #E6F0F7, 690px 1650px #E6F0F7, 850px 1550px #E6F0F7,
+    1060px 1640px #E6F0F7, 1250px 1570px #E6F0F7, 1450px 1650px #E6F0F7,
+    1680px 1560px #E6F0F7, 1850px 1640px #E6F0F7, 170px 1800px #E6F0F7,
+    400px 1750px #E6F0F7, 620px 1830px #E6F0F7, 830px 1780px #E6F0F7,
+    1010px 1850px #E6F0F7, 1230px 1790px #E6F0F7, 1480px 1820px #E6F0F7,
+    1700px 1760px #E6F0F7, 1900px 1850px #E6F0F7;
+  opacity: 0.4;
 }
+/* Larger stars — 1.5px, fewer, with twinkle */
 .stars::after {
-  background-image:
-    radial-gradient(1px 1px at 20% 30%, rgba(230,240,247,0.25) 50%, transparent 50%),
-    radial-gradient(1.5px 1.5px at 40% 70%, rgba(230,240,247,0.2) 50%, transparent 50%),
-    radial-gradient(1px 1px at 65% 25%, rgba(230,240,247,0.3) 50%, transparent 50%),
-    radial-gradient(1px 1px at 80% 55%, rgba(230,240,247,0.15) 50%, transparent 50%),
-    radial-gradient(1.5px 1.5px at 35% 95%, rgba(230,240,247,0.2) 50%, transparent 50%),
-    radial-gradient(1px 1px at 55% 50%, rgba(230,240,247,0.25) 50%, transparent 50%),
-    radial-gradient(1px 1px at 95% 10%, rgba(230,240,247,0.2) 50%, transparent 50%),
-    radial-gradient(1.5px 1.5px at 8% 75%, rgba(230,240,247,0.15) 50%, transparent 50%);
-  animation: twinkle 4s ease-in-out infinite alternate;
+  content: ''; position: absolute; top: 0; left: 0;
+  width: 1.5px; height: 1.5px; border-radius: 50%;
+  background: transparent;
+  box-shadow:
+    120px 60px #E6F0F7, 450px 200px #E6F0F7, 780px 130px #E6F0F7,
+    1100px 310px #E6F0F7, 1400px 160px #E6F0F7, 1700px 250px #E6F0F7,
+    200px 500px #E6F0F7, 550px 620px #E6F0F7, 900px 550px #E6F0F7,
+    1250px 470px #E6F0F7, 1600px 600px #E6F0F7, 350px 830px #E6F0F7,
+    700px 780px #E6F0F7, 1050px 900px #E6F0F7, 1380px 750px #E6F0F7,
+    1750px 880px #E6F0F7, 100px 1100px #E6F0F7, 500px 1200px #E6F0F7,
+    850px 1050px #E6F0F7, 1200px 1150px #E6F0F7, 1550px 1080px #E6F0F7,
+    1850px 1200px #E6F0F7, 280px 1400px #E6F0F7, 650px 1500px #E6F0F7,
+    1000px 1380px #E6F0F7, 1350px 1480px #E6F0F7, 1680px 1350px #E6F0F7,
+    160px 1700px #E6F0F7, 520px 1800px #E6F0F7, 880px 1720px #E6F0F7,
+    1200px 1800px #E6F0F7, 1550px 1750px #E6F0F7, 1880px 1680px #E6F0F7;
+  opacity: 0.6;
+  animation: twinkle 3s ease-in-out infinite alternate;
 }
 @keyframes twinkle {
   0% { opacity: 0.3; }
-  100% { opacity: 0.8; }
+  100% { opacity: 0.7; }
 }
 
 /* =============================================================================
