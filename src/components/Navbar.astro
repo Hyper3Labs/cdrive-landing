@@ -1,0 +1,78 @@
+---
+// Navbar.astro — sticky top navigation bar
+---
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <!-- Logo + Wordmark -->
+    <a href="/" class="navbar-brand">
+      <img src="/logo.svg" alt="ClawDrive" style="height: 28px; width: auto;" />
+      <span>ClawDrive</span>
+    </a>
+
+    <!-- Nav Links + GitHub (desktop) -->
+    <div class="navbar-links">
+      <a href="#features">Features</a>
+      <a href="https://clawdrive.dev/docs" target="_blank" rel="noopener noreferrer">Docs</a>
+      <a href="#api-reference">API</a>
+      <a
+        href="https://github.com/Hyper3Labs/clawdrive"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="navbar-github"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        GitHub
+      </a>
+    </div>
+
+    <!-- Hamburger (mobile) -->
+    <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<style>
+  /* Mobile nav-open state: show links as dropdown */
+  @media (max-width: 767px) {
+    .hamburger {
+      display: block;
+    }
+    .navbar-links {
+      display: none;
+      position: absolute;
+      top: 56px;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+      background: rgba(6, 16, 24, 0.97);
+      border-bottom: 1px solid #1F3647;
+      padding: 12px 24px 20px;
+      z-index: 99;
+    }
+    .navbar-links a {
+      padding: 10px 0;
+      width: 100%;
+      font-size: 15px;
+    }
+    .navbar-links .navbar-github {
+      margin-top: 8px;
+      border: 1px solid #1F3647;
+    }
+  }
+
+  /* When body has .nav-open, show mobile menu */
+  :global(body.nav-open) .navbar-links {
+    display: flex;
+  }
+
+  /* Desktop: hamburger hidden */
+  @media (min-width: 768px) {
+    .hamburger {
+      display: none;
+    }
+  }
+</style>
