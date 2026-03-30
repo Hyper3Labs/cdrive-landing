@@ -5,7 +5,6 @@ import CodeBlock from './CodeBlock.astro';
 <section id="hero" class="hero">
   <div class="hero-inner">
     <div class="hero-text">
-      <span class="hero-eyebrow">FOR AUTONOMOUS AGENTS</span>
       <h1>Google Drive for <span class="accent">AI Agents</span></h1>
       <p class="hero-subtitle">
         Store anything. Search everything. Share with any agent.<br />
@@ -15,22 +14,19 @@ import CodeBlock from './CodeBlock.astro';
       <div class="hero-steps">
         <CodeBlock variant="inline" code="npm install -g clawdrive" copyable={true} />
         <CodeBlock variant="inline" code='export GEMINI_API_KEY="your-key-here"' copyable={true} />
-        <CodeBlock variant="inline" code="clawdrive serve --demo nasa" copyable={true} />
+        <CodeBlock variant="inline" code="clawdrive serve" copyable={true} />
       </div>
       <p class="hero-helper">
         Free API key at <a href="https://aistudio.google.com/apikey">aistudio.google.com/apikey</a>
       </p>
-      <p class="hero-helper">
-        or run without installing: <code>npx clawdrive serve --demo nasa</code>
-      </p>
     </div>
     <div class="hero-visual">
       <img
-        src="/hero-illustration.png"
-        alt="ClawDrive mascot — a golden cauldron with lobster claws floating in space, surrounded by orbiting file icons"
+        src="/hero-illustration.svg"
+        alt="ClawDrive mascot — a golden cauldron with lobster claws"
         class="hero-illustration"
         width="420"
-        height="420"
+        height="508"
       />
     </div>
   </div>
