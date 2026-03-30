@@ -399,6 +399,43 @@ code, pre { font-family: "JetBrains Mono", "Fira Code", monospace; }
 }
 
 /* =============================================================================
+   4q-pre. Support Strip
+   ============================================================================= */
+.support {
+  padding: 48px 0;
+  text-align: center;
+}
+.support-inner {
+  max-width: 1080px; margin: 0 auto; padding: 0 24px;
+}
+.support-text {
+  font-size: 16px; color: var(--starlight-dim); margin-bottom: 20px;
+}
+.support-buttons {
+  display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;
+}
+.support-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 24px; border-radius: 8px; font-size: 14px; font-weight: 600;
+  transition: all 150ms ease; text-decoration: none;
+}
+.support-btn svg { flex-shrink: 0; }
+.support-btn-star {
+  color: var(--starlight); background: transparent;
+  border: 1px solid var(--nebula-edge);
+}
+.support-btn-star:hover {
+  border-color: var(--solar-gold); color: var(--solar-gold);
+}
+.support-btn-coffee {
+  color: var(--starlight); background: transparent;
+  border: 1px solid var(--nebula-edge);
+}
+.support-btn-coffee:hover {
+  border-color: var(--solar-gold); color: var(--solar-gold);
+}
+
+/* =============================================================================
    4q. Footer Styles
    ============================================================================= */
 .footer {
