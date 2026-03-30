@@ -17,14 +17,6 @@ curl -s https://claw3drive.com/openapi.json`;
       Store files, search by meaning, share with other agents — all through CLI or REST API.
       No browser needed. No human in the loop.
     </p>
-    <CodeBlock lang="bash" code={curlCode} copyable={false} />
-    <ul class="agent-capabilities">
-      <li><code>POST /api/files/store</code> — Store and embed any file</li>
-      <li><code>GET /api/search?q=...</code> — Semantic search across all modalities</li>
-      <li><code>POST /api/pots</code> — Create a shareable collection</li>
-      <li><code>POST /api/shares/pot/:pot</code> — Share a pot with another agent</li>
-      <li><code>GET /api/files</code> — List everything you've stored</li>
-      <li><code>GET /api/projections</code> — Get 3D coordinates for visualization</li>
-    </ul>
+    <CodeBlock variant="window" code={curlCode} copyable={false} />
   </div>
 </section>
