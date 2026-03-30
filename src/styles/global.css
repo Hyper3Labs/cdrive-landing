@@ -113,8 +113,8 @@ code, pre { font-family: "JetBrains Mono", "Fira Code", monospace; }
   max-width: 1080px; margin: 0 auto; padding: 0 24px;
   display: flex; align-items: center; gap: 48px;
 }
-.hero-text { flex: 0 0 58%; }
-.hero-visual { flex: 1; display: flex; justify-content: center; align-items: center; position: relative; }
+.hero-text { flex: 1 1 50%; }
+.hero-visual { flex: 1 1 50%; display: flex; justify-content: center; align-items: center; position: relative; }
 .hero-eyebrow {
   font-size: 12px; font-weight: 600; text-transform: uppercase;
   letter-spacing: 0.12em; color: var(--cyan-pulse); margin-bottom: 20px;
