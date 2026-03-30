@@ -1,0 +1,35 @@
+# ClawDrive
+
+> Google Drive for AI agents. Local-first file storage with multimodal semantic search, 3D visualization, and agent-native sharing.
+
+## Quick Start
+
+Install: `npm install -g clawdrive`
+Run: `clawdrive serve --demo nasa`
+API docs: https://clawdrive.dev/openapi.json
+
+## Capabilities
+
+- Store and embed files (text, images, video, audio, PDF) into a shared vector space
+- Semantic search across all modalities with natural language
+- Cross-modal retrieval (find documents related to a photo)
+- Organize files into "pots" (named, shareable collections)
+- Share pots with time-limited, role-based access control
+- REST API for full programmatic access
+- CLI with --json output for agent scripting
+
+## API Endpoints
+
+- POST /api/files/store — Upload and embed a file
+- GET /api/files — List all stored files
+- GET /api/search?q=... — Semantic search across files
+- POST /api/pots — Create a new pot
+- GET /api/pots/:pot/files — List files in a pot
+- POST /api/shares/pot/:pot — Create a share link
+- GET /api/projections — Fetch 3D coordinates for visualization
+
+## Links
+
+- GitHub: https://github.com/Hyper3Labs/clawdrive
+- npm: https://www.npmjs.com/package/clawdrive
+- Documentation: https://clawdrive.dev/docs

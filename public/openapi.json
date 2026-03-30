@@ -1,0 +1,462 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "ClawDrive API",
+    "version": "1.0.0",
+    "description": "Google Drive for AI agents — REST API for file storage, semantic search, and agent-native sharing."
+  },
+  "servers": [
+    {
+      "url": "http://localhost:7860"
+    }
+  ],
+  "paths": {
+    "/api/files/store": {
+      "post": {
+        "summary": "Upload and embed a file",
+        "operationId": "storeFile",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary",
+                    "description": "File to upload and embed"
+                  },
+                  "pot": {
+                    "type": "string",
+                    "description": "Optional pot name to add the file to"
+                  }
+                },
+                "required": ["file"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "File stored and embedded successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FileMetadata"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/files": {
+      "get": {
+        "summary": "List all stored files",
+        "operationId": "listFiles",
+        "parameters": [
+          {
+            "name": "pot",
+            "in": "query",
+            "schema": { "type": "string" },
+            "description": "Filter by pot name"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": { "type": "integer", "default": 100 },
+            "description": "Maximum number of results"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of files",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/FileMetadata" }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/files/{id}": {
+      "get": {
+        "summary": "Get file metadata",
+        "operationId": "getFile",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" },
+            "description": "File ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "File metadata",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/FileMetadata" }
+              }
+            }
+          },
+          "404": {
+            "description": "File not found"
+          }
+        }
+      }
+    },
+    "/api/search": {
+      "get": {
+        "summary": "Semantic search across files",
+        "operationId": "searchFiles",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": true,
+            "schema": { "type": "string" },
+            "description": "Natural language search query"
+          },
+          {
+            "name": "pot",
+            "in": "query",
+            "schema": { "type": "string" },
+            "description": "Restrict search to a specific pot"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": { "type": "integer", "default": 10 },
+            "description": "Maximum number of results"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Search results ranked by relevance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/SearchResult" }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/pots": {
+      "post": {
+        "summary": "Create a new pot",
+        "operationId": "createPot",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": { "type": "string", "description": "Pot name" },
+                  "description": { "type": "string", "description": "Optional description" }
+                },
+                "required": ["name"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Pot created",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Pot" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/pots/{pot}/files": {
+      "get": {
+        "summary": "List files in a pot",
+        "operationId": "listPotFiles",
+        "parameters": [
+          {
+            "name": "pot",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" },
+            "description": "Pot name or ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Files in the pot",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/FileMetadata" }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/shares/pot/{pot}": {
+      "post": {
+        "summary": "Create a share link for a pot",
+        "operationId": "createPotShare",
+        "parameters": [
+          {
+            "name": "pot",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" },
+            "description": "Pot name or ID"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "role": {
+                    "type": "string",
+                    "enum": ["viewer", "editor"],
+                    "default": "viewer"
+                  },
+                  "expiresIn": {
+                    "type": "string",
+                    "description": "Expiry duration (e.g. '24h', '7d')"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Share link created",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ShareLink" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/shares/inbox": {
+      "get": {
+        "summary": "List pending incoming shares",
+        "operationId": "listShareInbox",
+        "responses": {
+          "200": {
+            "description": "Pending incoming shares",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/PendingShare" }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/shares/approve/{id}": {
+      "post": {
+        "summary": "Approve a pending share",
+        "operationId": "approveShare",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" },
+            "description": "Share ID to approve"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Share approved",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "ok": { "type": "boolean" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/projections": {
+      "get": {
+        "summary": "Fetch UMAP projections for 3D visualization",
+        "operationId": "getProjections",
+        "parameters": [
+          {
+            "name": "pot",
+            "in": "query",
+            "schema": { "type": "string" },
+            "description": "Filter projections to a specific pot"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "3D UMAP coordinates for each file",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/Projection" }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/usage": {
+      "get": {
+        "summary": "API usage metrics",
+        "operationId": "getUsage",
+        "responses": {
+          "200": {
+            "description": "Usage statistics",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/UsageMetrics" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/taxonomy": {
+      "get": {
+        "summary": "File taxonomy tree",
+        "operationId": "getTaxonomy",
+        "responses": {
+          "200": {
+            "description": "Hierarchical taxonomy of stored files by type and category",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/TaxonomyTree" }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "FileMetadata": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "type": { "type": "string" },
+          "size": { "type": "integer" },
+          "pot": { "type": "string" },
+          "createdAt": { "type": "string", "format": "date-time" },
+          "url": { "type": "string" }
+        }
+      },
+      "SearchResult": {
+        "type": "object",
+        "properties": {
+          "file": { "$ref": "#/components/schemas/FileMetadata" },
+          "score": { "type": "number", "description": "Similarity score 0-1" }
+        }
+      },
+      "Pot": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "description": { "type": "string" },
+          "fileCount": { "type": "integer" },
+          "createdAt": { "type": "string", "format": "date-time" }
+        }
+      },
+      "ShareLink": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "url": { "type": "string" },
+          "pot": { "type": "string" },
+          "role": { "type": "string" },
+          "expiresAt": { "type": "string", "format": "date-time" }
+        }
+      },
+      "PendingShare": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "pot": { "type": "string" },
+          "fromAgent": { "type": "string" },
+          "role": { "type": "string" },
+          "createdAt": { "type": "string", "format": "date-time" }
+        }
+      },
+      "Projection": {
+        "type": "object",
+        "properties": {
+          "fileId": { "type": "string" },
+          "x": { "type": "number" },
+          "y": { "type": "number" },
+          "z": { "type": "number" },
+          "label": { "type": "string" }
+        }
+      },
+      "UsageMetrics": {
+        "type": "object",
+        "properties": {
+          "totalFiles": { "type": "integer" },
+          "totalPots": { "type": "integer" },
+          "storageBytes": { "type": "integer" },
+          "searchRequestsToday": { "type": "integer" },
+          "embedRequestsToday": { "type": "integer" }
+        }
+      },
+      "TaxonomyTree": {
+        "type": "object",
+        "properties": {
+          "nodes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": { "type": "string" },
+                "label": { "type": "string" },
+                "type": { "type": "string" },
+                "count": { "type": "integer" },
+                "children": {
+                  "type": "array",
+                  "items": { "type": "string" }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
