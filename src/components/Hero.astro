@@ -12,15 +12,21 @@ import CodeBlock from './CodeBlock.astro';
         Multimodal semantic search across text, images, video, and audio —
         no folders, no friction.
       </p>
-      <div class="hero-cta">
-        <CodeBlock lang="bash" code="npm install -g clawdrive" copyable={true} />
+      <div class="hero-steps">
+        <CodeBlock variant="inline" code="npm install -g clawdrive" copyable={true} />
+        <CodeBlock variant="inline" code='export GEMINI_API_KEY="your-key-here"' copyable={true} />
+        <CodeBlock variant="inline" code="clawdrive serve --demo nasa" copyable={true} />
       </div>
-      <p class="hero-helper">or try it now: <code>npx clawdrive serve --demo nasa</code></p>
-      <p class="hero-helper"><a href="https://aistudio.google.com/apikey">Get a free Gemini API key →</a></p>
+      <p class="hero-helper">
+        Free API key at <a href="https://aistudio.google.com/apikey">aistudio.google.com/apikey</a>
+      </p>
+      <p class="hero-helper">
+        or run without installing: <code>npx clawdrive serve --demo nasa</code>
+      </p>
     </div>
     <div class="hero-visual">
       <img
-        src="/hero-illustration.png"
+        src="/hero-illustration.svg"
         alt="ClawDrive mascot — a golden cauldron with lobster claws floating in space, surrounded by orbiting file icons"
         class="hero-illustration"
         width="420"

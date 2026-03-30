@@ -129,7 +129,10 @@ code, pre { font-family: "JetBrains Mono", "Fira Code", monospace; }
   font-size: 18px; color: rgba(230, 240, 247, 0.7);
   line-height: 1.6; max-width: 520px; margin-bottom: 32px;
 }
-.hero-cta { margin-bottom: 12px; }
+.hero-steps {
+  display: flex; flex-direction: column; gap: 8px;
+  margin-bottom: 16px; max-width: 480px;
+}
 .hero-helper {
   font-size: 14px; color: var(--text-muted); margin-bottom: 8px;
 }
