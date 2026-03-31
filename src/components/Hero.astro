@@ -21,13 +21,16 @@ import CodeBlock from './CodeBlock.astro';
       </p>
     </div>
     <div class="hero-visual">
-      <img
-        src="/hero-illustration-clean.png"
-        alt="ClawDrive mascot — a golden cauldron with lobster claws"
-        class="hero-illustration"
-        width="420"
-        height="420"
-      />
+      <picture>
+        <source srcset="/hero-illustration-clean.webp" type="image/webp" />
+        <img
+          src="/hero-illustration-clean.png"
+          alt="ClawDrive mascot — a golden cauldron with lobster claws"
+          class="hero-illustration"
+          width="420"
+          height="420"
+        />
+      </picture>
     </div>
   </div>
 </section>
